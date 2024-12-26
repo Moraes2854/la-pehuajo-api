@@ -17,7 +17,7 @@ const envsSchema = joi.object({
     PORT: joi.number().required(),
     DB_HOST: joi.string().required(),
     DB_NAME: joi.string().required(),
-    DB_PASSWORD: joi.string().required().allow('', undefined),
+    DB_PASSWORD: joi.string().required().allow('').default(''),
     DB_PORT: joi.number().required(),
     DB_USERNAME: joi.string().required(),
     JWT_SECRET: joi.string().required(),
