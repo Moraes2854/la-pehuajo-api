@@ -1,11 +1,14 @@
 import * as admin from 'firebase-admin';
 import { ServiceAccount } from 'firebase-admin';
-import { envs } from '../config/envs';
+import blablabla from '../config/firebase.credentials.json';
+const firebaseCredentials = require('../config/firebase.credentials.json');
+
+console.log(firebaseCredentials);
 
 const serviceAccount: ServiceAccount = {
-  projectId: envs.firebaseProjectId,
-  privateKey: envs.firebasePrivateKey,
-  clientEmail: envs.firebaseClientEmail,
+  projectId: firebaseCredentials.project_id,
+  privateKey: firebaseCredentials.private_key,
+  clientEmail: firebaseCredentials.client_email,
 };
 
 export const firebaseApp = admin.initializeApp({
