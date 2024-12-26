@@ -26,7 +26,6 @@ import { UploadController } from './upload/upload.controller';
       password: envs.dbPassword,
       autoLoadEntities: true,
       synchronize: true,
-      url: envs.postgresUrl,
       ssl: envs.useSsl ? { rejectUnauthorized: false } : undefined
     }),
     AuthModule, 
