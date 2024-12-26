@@ -9,12 +9,8 @@ interface EnvVars {
     DB_PORT: number;
     DB_USERNAME: string;
     JWT_SECRET: string;
-    POSTGRES_URL: string;
     USE_SSL: boolean;
     SEED_EXECUTED: boolean;
-    FIREBASE_PROJECT_ID: string;
-    FIREBASE_PRIVATE_KEY: string;
-    FIREBASE_CLIENT_EMAIL: string;
 }
 
 const envsSchema = joi.object({
@@ -25,12 +21,8 @@ const envsSchema = joi.object({
     DB_PORT: joi.number().required(),
     DB_USERNAME: joi.string().required(),
     JWT_SECRET: joi.string().required(),
-    POSTGRES_URL: joi.string().required(),
     USE_SSL: joi.boolean().required(),
     SEED_EXECUTED: joi.boolean().required(),
-    FIREBASE_PROJECT_ID: joi.string().optional(),
-    FIREBASE_PRIVATE_KEY: joi.string().optional(),
-    FIREBASE_CLIENT_EMAIL: joi.string().optional(),
 })
 .unknown( true );
 
@@ -48,10 +40,6 @@ export const envs = {
     dbPort: envVars.DB_PORT,
     dbUsername: envVars.DB_USERNAME,
     jwtSecret: envVars.JWT_SECRET,
-    postgresUrl: envVars.POSTGRES_URL,
     useSsl: envVars.USE_SSL,
     seedExecuted: envVars.SEED_EXECUTED,
-    firebaseProjectId: envVars.FIREBASE_PROJECT_ID,
-    firebasePrivateKey: envVars.FIREBASE_PRIVATE_KEY,
-    firebaseClientEmail: envVars.FIREBASE_CLIENT_EMAIL,
 }
