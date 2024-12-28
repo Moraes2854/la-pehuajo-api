@@ -11,6 +11,8 @@ import { join } from 'path';
 import { FirebaseStorageService } from './firebase-storage/firebase-storage.service';
 import { UploadController } from './upload/upload.controller';
 
+console.log(envs);
+
 @Module({
   imports: [
     ServeStaticModule.forRoot({
@@ -23,7 +25,7 @@ import { UploadController } from './upload/upload.controller';
       port: envs.dbPort,
       database: envs.dbName,
       username: envs.dbUsername,
-      password: envs.dbPassword,
+      password: envs.dbPassword || '',
       autoLoadEntities: true,
       synchronize: true,
       ssl: envs.useSsl ? { rejectUnauthorized: false } : undefined

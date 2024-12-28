@@ -3,8 +3,6 @@ import { ServiceAccount } from 'firebase-admin';
 import blablabla from '../config/firebase.credentials.json';
 const firebaseCredentials = require('../config/firebase.credentials.json');
 
-console.log(firebaseCredentials);
-
 const serviceAccount: ServiceAccount = {
   projectId: firebaseCredentials.project_id,
   privateKey: firebaseCredentials.private_key,

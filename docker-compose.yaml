@@ -1,18 +1,14 @@
-version: '3.8'
+version: '3'
 
 services:
-  postgres:
-    image: postgres:14
-    container_name: postgres_container
+  db:
+    image: postgres:14.3
     restart: always
+    ports:
+    - "5432:5432"
     environment:
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: ${DB_NAME}
-      POSTGRES_USER: ${DB_USERNAME}
-    ports:
-      - "5432:5432"
+    container_name: espanarg
     volumes:
-      - postgres_data:/var/lib/postgresql/data
-
-volumes:
-  postgres_data:
+      - ./postgres:/var/lib/postgresql/data
