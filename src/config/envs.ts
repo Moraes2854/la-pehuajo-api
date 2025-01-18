@@ -11,6 +11,8 @@ interface EnvVars {
     JWT_SECRET: string;
     USE_SSL: boolean;
     SEED_EXECUTED: boolean;
+    ADMIN_EMAIL: string;
+    ADMIN_PASSWORD: string;
 }
 
 const envsSchema = joi.object({
@@ -23,6 +25,8 @@ const envsSchema = joi.object({
     JWT_SECRET: joi.string().required(),
     USE_SSL: joi.boolean().required(),
     SEED_EXECUTED: joi.boolean().required(),
+    ADMIN_EMAIL: joi.string().required(),
+    ADMIN_PASSWORD: joi.string().required(),
 })
 .unknown( true );
 
@@ -42,4 +46,6 @@ export const envs = {
     jwtSecret: envVars.JWT_SECRET,
     useSsl: envVars.USE_SSL,
     seedExecuted: envVars.SEED_EXECUTED,
+    adminEmail: envVars.ADMIN_EMAIL,
+    adminPassword: envVars.ADMIN_PASSWORD
 }
